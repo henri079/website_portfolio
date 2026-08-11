@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Henri Wiedenhoff — Portfolio</title>
+<title>Henri Wiedenhoff portfolio for Create Medtech</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -133,12 +133,12 @@
     max-width:360px; margin:0 auto; aspect-ratio:auto;
   }
   .hero-portrait .frame img{max-height:none;}
-  .stones-egg{display:flex; align-items:center; gap:12px; margin:2px 0 32px; flex-wrap:wrap;}
-  .stones-egg .frame{width:78px; padding:4px; flex:0 0 auto;}
-  .stones-egg .frame.mini::before, .stones-egg .frame.mini::after{display:none;}
+  .stones-egg{display:flex; align-items:flex-end; gap:16px; margin:22px 0 32px; flex-wrap:wrap;}
+  .stones-egg .frame{width:min(340px, 100%); padding:6px; flex:0 0 auto;}
   .stones-egg .frame img{max-height:none;}
   .stones-egg .stones-caption{
     font-family:var(--mono); font-size:11.5px; color:var(--muted-2); letter-spacing:0.03em;
+    padding-bottom:10px;
   }
   @media (max-width: 880px){
     .hero-grid{grid-template-columns:1fr; gap:40px;}
@@ -302,10 +302,9 @@
     <div class="hero-text">
     <p class="eyebrow">Biomedical Engineering · DTU</p>
     <h1 class="title">Let's keep the<br><span>stones rolling.</span></h1>
-    <p class="tagline">Henri Wiedenhoff — building things that pump, print, wire, and simulate.</p>
+    <p class="tagline">Henri Wiedenhoff — from idea to prototype</p>
     <div class="stones-egg">
-      <div class="frame mini"><img src="assets/stones-table.jpg" alt="Two small 3D-printed face-stones sitting on a wooden table"></div>
-      <div class="frame mini"><img src="assets/stones-closeup.jpg" alt="Close-up of the two face-stones"></div>
+      <div class="frame"><img src="assets/stones-table.jpg" alt="Two small 3D-printed face-stones sitting on a wooden table"></div>
       <span class="stones-caption">the stones, literally</span>
     </div>
     <p class="hero-desc">
