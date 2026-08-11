@@ -126,7 +126,18 @@
   }
   .scroll-cue svg{width:14px; height:14px; stroke:var(--muted-2);}
 
-  /* ---------- Section shell ---------- */
+  .hero-grid{
+    display:grid; grid-template-columns: 1.25fr 0.85fr; gap:64px; align-items:center;
+  }
+  .hero-portrait .frame{
+    max-width:360px; margin:0 auto; aspect-ratio:auto;
+  }
+  .hero-portrait .frame img{max-height:none;}
+  @media (max-width: 880px){
+    .hero-grid{grid-template-columns:1fr; gap:40px;}
+    .hero-portrait{order:-1;}
+    .hero-portrait .frame{max-width:220px;}
+  }
   section.projects{padding:100px 0 40px;}
   .section-head{margin-bottom:64px;}
   .section-head .eyebrow{color:var(--cyan);}
@@ -188,8 +199,8 @@
     padding:10px;
     overflow:hidden;
   }
-  .frame img, .frame video{width:100%; height:auto; display:block;}
-  .frame{display:flex; align-items:center; justify-content:center;}
+  .frame img, .frame video{width:100%; height:auto; max-height:72vh; display:block; object-fit:contain; margin:0 auto;}
+  .frame{display:flex; align-items:center; justify-content:center; background:#0d1215;}
   .frame::before, .frame::after,
   .corner-tl, .corner-br{
     content:''; position:absolute; width:14px; height:14px;
@@ -280,6 +291,8 @@
 
 <main id="top">
   <section class="hero wrap">
+    <div class="hero-grid">
+    <div class="hero-text">
     <p class="eyebrow">Mechatronics &amp; Biomedical Engineering</p>
     <h1 class="title">Let's keep the<br><span>stones rolling.</span></h1>
     <p class="tagline">Henri Wiedenhoff — building things that pump, print, wire, and simulate.</p>
@@ -296,6 +309,13 @@
       View projects
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
     </a>
+    </div>
+    <div class="hero-portrait">
+      <div class="frame">
+        <img src="assets/portrait-henri.jpg" alt="Portrait of Henri Wiedenhoff">
+      </div>
+    </div>
+    </div>
   </section>
 
   <section class="projects wrap" id="projects">
@@ -312,37 +332,37 @@
           <span class="tag">Embedded Systems</span>
         </div>
         <h3 class="project-title">Automated Beverage Robot</h3>
-        <p class="project-sub">Custom PCB · Firmware · CNC-milled &amp; 3D-printed housing</p>
+        <p class="project-sub">Custom PCB (KiCad) · Firmware · Side project with my brother</p>
         <p class="project-desc">
-          A self-contained robot that mixes and dispenses drinks on demand. I designed the electronics from
-          scratch — a hand-soldered custom PCB running the control logic — and built the housing myself,
-          combining CNC-milled parts with 3D-printed components.
+          A for-fun side project I built together with my brother alongside our studies: a robot that
+          automatically detects a glass placed underneath it and refills it on its own.
         </p>
         <p class="project-desc">
-          The finished unit has four illuminated selection buttons and a small onboard display for status
-          and feedback, so the whole interaction stays on the device itself.
+          We designed and built the entire thing ourselves, from the CAD models for the housing to the
+          electronics. I digitized the custom PCB in KiCad, hand-soldered it, and wrote all of the firmware
+          that runs the robot.
+        </p>
+        <p class="project-desc">
+          The onboard display is interactive — guests enter their name before ordering, and the robot
+          keeps track of details like how many drinks each person has had.
         </p>
         <!-- To add more text later: just add another <p class="project-desc"> paragraph here. -->
       </div>
       <div class="project-media">
         <div class="media-grid">
           <div class="frame full">
-            <img src="assets/beverage-1.jpg" alt="Finished beverage robot on a desk, glowing selection buttons and LCD display">
-            <span class="cap">Finished unit</span>
-          </div>
-          <div class="frame">
-            <img src="assets/beverage-4.jpg" alt="Close-up of the hand-wired custom PCB">
-            <span class="cap">Custom PCB</span>
-          </div>
-          <div class="frame">
-            <img src="assets/beverage-3.jpg" alt="Soldering the electronics at a desk">
-            <span class="cap">Assembly</span>
-          </div>
-          <div class="frame full">
             <video controls preload="metadata" poster="assets/beverage-testrun-poster.jpg">
               <source src="assets/beverage-testrun.mp4" type="video/mp4">
             </video>
             <span class="cap">First test run</span>
+          </div>
+          <div class="frame">
+            <img src="assets/beverage-4.jpg" alt="Close-up of the hand-wired custom PCB">
+            <span class="cap">Custom PCB (KiCad)</span>
+          </div>
+          <div class="frame">
+            <img src="assets/beverage-3.jpg" alt="Soldering the custom PCB at a desk">
+            <span class="cap">Soldering the PCB</span>
           </div>
           <!-- Add another image: duplicate a .frame block above and point src at assets/beverage-5.jpg etc. -->
         </div>
@@ -392,10 +412,6 @@
             <span class="cap">Printed housing</span>
           </div>
           <div class="frame full">
-            <img src="assets/heartpump-1.jpg" alt="Pump connected to tubing and reservoirs on the test bench">
-            <span class="cap">Test bench setup</span>
-          </div>
-          <div class="frame full">
             <video controls preload="metadata" poster="assets/pump-run-poster.jpg">
               <source src="assets/pump-run.mp4" type="video/mp4">
             </video>
@@ -418,6 +434,12 @@
           A dynamic fluid phantom built to validate an optical sensor: a transparent silicone block with an
           embedded branching channel that mimics blood flow, letting us test the sensor's readings against
           a known, controllable ground truth.
+        </p>
+        <p class="project-desc">
+          To create the vessel network, I developed a new method using dissolvable 3D-printed structures:
+          a soluble lattice is printed in the shape of the vessels and cast into silicone, then dissolved
+          away, leaving hollow channels behind. Combined with the silicone's specific material properties
+          and the channel geometry, this reproduces flow conditions similar to real blood vessels.
         </p>
         <p class="project-desc">
           The work was published as <em>"Development of a Dynamic Fluid Phantom — Setup and Validation for
