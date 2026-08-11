@@ -250,6 +250,35 @@
   }
   .umbrella .meta span{color:var(--text);}
 
+  /* ---------- MTLS section ---------- */
+  section.mtls{padding:20px 0 100px; border-top:1px solid var(--line); margin-top:20px;}
+  .mtls-intro{
+    max-width:680px; color:var(--muted); font-size:15.5px; margin:0 0 56px;
+  }
+  .mtls-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:28px;
+  }
+  .mtls-card{
+    border:1px solid var(--line); padding:26px; background:var(--panel);
+    display:flex; flex-direction:column;
+  }
+  .mtls-logo{
+    padding:16px; margin-bottom:20px; background:#eef2ee;
+  }
+  .mtls-logo img{max-height:80px; width:auto; margin:0 auto;}
+  .tag.nda{
+    color:var(--muted-2); border-color:var(--line); background:transparent;
+  }
+  .mtls-card-title{
+    font-family:var(--display); font-weight:600; font-size:19px;
+    margin:16px 0 10px; letter-spacing:-0.005em;
+  }
+  .mtls-card-desc{color:var(--muted); font-size:14.5px; margin:0; flex-grow:1;}
+
+  @media (max-width: 880px){
+    .mtls-grid{grid-template-columns:1fr;}
+  }
+
   /* ---------- footer ---------- */
   footer{
     margin-top:80px; padding:56px 0 48px; border-top:1px solid var(--line);
@@ -513,6 +542,57 @@
       </div>
     </article>
 
+  </section>
+
+  <section class="mtls wrap" id="mtls">
+    <div class="section-head reveal">
+      <p class="eyebrow">Professional Experience</p>
+      <h2 class="section-title">MTLS Group</h2>
+    </div>
+    <p class="mtls-intro reveal">
+      Alongside my studies, I worked in close collaboration with Morten Sørensen at MTLS Group, assisting
+      three MedTech startups with their regulatory and technical work.
+    </p>
+
+    <div class="mtls-grid reveal">
+      <div class="mtls-card">
+        <div class="frame mtls-logo">
+          <img src="assets/rheia-logo.jpg" alt="Rheia Medical logo">
+        </div>
+        <div class="tag-row">
+          <span class="tag cyan">Regulatory Affairs</span>
+        </div>
+        <h3 class="mtls-card-title">Rheia Medical</h3>
+        <p class="mtls-card-desc">
+          Supported the regulatory workload, helping put together the risk management plan, the design and
+          development plan, the requirements traceability table, and the product profile.
+        </p>
+      </div>
+
+      <div class="mtls-card">
+        <div class="tag-row">
+          <span class="tag cyan">Regulatory Affairs</span>
+          <span class="tag nda">Under NDA</span>
+        </div>
+        <h3 class="mtls-card-title">Innovative CPAP Device</h3>
+        <p class="mtls-card-desc">
+          A similar regulatory role for an early-stage continuous positive airway pressure (CPAP) device.
+          Due to an NDA, I can't go into further detail here.
+        </p>
+      </div>
+
+      <div class="mtls-card">
+        <div class="tag-row">
+          <span class="tag cyan">Hardware Testing</span>
+          <span class="tag nda">Under NDA</span>
+        </div>
+        <h3 class="mtls-card-title">Electrostimulator for Cluster Headaches</h3>
+        <p class="mtls-card-desc">
+          Ran electronic tests to verify custom-made electrodes for a neurostimulation device. Also under
+          NDA, so details are limited.
+        </p>
+      </div>
+    </div>
   </section>
 
   <footer class="wrap" id="contact">
