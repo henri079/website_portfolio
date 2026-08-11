@@ -188,7 +188,8 @@
     padding:10px;
     overflow:hidden;
   }
-  .frame img{width:100%; height:100%; object-fit:cover; display:block;}
+  .frame img, .frame video{width:100%; height:auto; display:block;}
+  .frame{display:flex; align-items:center; justify-content:center;}
   .frame::before, .frame::after,
   .corner-tl, .corner-br{
     content:''; position:absolute; width:14px; height:14px;
@@ -202,11 +203,8 @@
     background:rgba(10,14,16,0.72); padding:4px 9px; letter-spacing:0.03em;
     border:1px solid rgba(255,255,255,0.12);
   }
-  .media-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .media-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:start;}
   .media-grid .frame.full{grid-column:1 / -1;}
-  .frame.tall img{aspect-ratio:4/5;}
-  .frame.wide img{aspect-ratio:16/10;}
-  .frame.square img{aspect-ratio:1/1;}
 
   /* placeholder slot for future images */
   .frame.add-slot{
@@ -328,17 +326,23 @@
       </div>
       <div class="project-media">
         <div class="media-grid">
-          <div class="frame wide full">
+          <div class="frame full">
             <img src="assets/beverage-1.jpg" alt="Finished beverage robot on a desk, glowing selection buttons and LCD display">
             <span class="cap">Finished unit</span>
           </div>
-          <div class="frame square">
+          <div class="frame">
             <img src="assets/beverage-4.jpg" alt="Close-up of the hand-wired custom PCB">
             <span class="cap">Custom PCB</span>
           </div>
-          <div class="frame square">
+          <div class="frame">
             <img src="assets/beverage-3.jpg" alt="Soldering the electronics at a desk">
             <span class="cap">Assembly</span>
+          </div>
+          <div class="frame full">
+            <video controls preload="metadata" poster="assets/beverage-testrun-poster.jpg">
+              <source src="assets/beverage-testrun.mp4" type="video/mp4">
+            </video>
+            <span class="cap">First test run</span>
           </div>
           <!-- Add another image: duplicate a .frame block above and point src at assets/beverage-5.jpg etc. -->
         </div>
@@ -379,17 +383,23 @@
       </div>
       <div class="project-media">
         <div class="media-grid">
-          <div class="frame square">
+          <div class="frame">
             <img src="assets/heartpump-3.jpg" alt="CAD model of the pump housing and star-shaped impeller">
             <span class="cap">CAD model</span>
           </div>
-          <div class="frame square">
+          <div class="frame">
             <img src="assets/heartpump-2.jpg" alt="3D-printed pump housing with tubing connected">
             <span class="cap">Printed housing</span>
           </div>
-          <div class="frame wide full">
+          <div class="frame full">
             <img src="assets/heartpump-1.jpg" alt="Pump connected to tubing and reservoirs on the test bench">
             <span class="cap">Test bench setup</span>
+          </div>
+          <div class="frame full">
+            <video controls preload="metadata" poster="assets/pump-run-poster.jpg">
+              <source src="assets/pump-run.mp4" type="video/mp4">
+            </video>
+            <span class="cap">Pump running (300 ms cycle)</span>
           </div>
         </div>
       </div>
@@ -420,11 +430,11 @@
       </div>
       <div class="project-media">
         <div class="media-grid">
-          <div class="frame wide full">
+          <div class="frame full">
             <img src="assets/phantom-1.jpg" alt="Close-up of the silicone vascular phantom with a red dyed branching channel">
             <span class="cap">Phantom, close-up</span>
           </div>
-          <div class="frame wide full">
+          <div class="frame full">
             <img src="assets/phantom-2.jpg" alt="Publication cover page and channel imaging results">
             <span class="cap">Publication &amp; sensor validation</span>
           </div>
@@ -453,11 +463,11 @@
       </div>
       <div class="project-media">
         <div class="media-grid">
-          <div class="frame wide full">
+          <div class="frame full">
             <img src="assets/vr-1.jpg" alt="Modeled 3D lab environment, view towards the windows and workstations">
             <span class="cap">Modeled lab environment</span>
           </div>
-          <div class="frame wide full">
+          <div class="frame full">
             <img src="assets/vr-2.jpg" alt="Modeled 3D lab environment, alternate angle">
             <span class="cap">Alternate view</span>
           </div>
