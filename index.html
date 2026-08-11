@@ -72,7 +72,11 @@
   }
   .nav-name{
     font-family:var(--display); font-weight:600; font-size:17px; letter-spacing:0.01em;
-    text-decoration:none;
+    text-decoration:none; display:flex; align-items:baseline; gap:10px;
+  }
+  .nav-name .nav-subtitle{
+    font-family:var(--mono); font-weight:400; font-size:11.5px; letter-spacing:0.03em;
+    color:var(--muted-2); text-transform:none;
   }
   .nav-links{display:flex; gap:28px; list-style:none; margin:0; padding:0;}
   .nav-links a{
@@ -302,6 +306,10 @@
     .hero{padding:64px 0 56px;}
     section.projects{padding:64px 0 20px;}
   }
+  @media (max-width: 640px){
+    .nav-name{flex-direction:column; align-items:flex-start; gap:1px;}
+    .nav-name .nav-subtitle{font-size:10px;}
+  }
   @media (max-width: 560px){
     .media-grid{grid-template-columns:1fr;}
     .nav-links{display:none;}
@@ -318,7 +326,7 @@
 
 <header class="site">
   <nav class="nav">
-    <a class="nav-name" href="#top">HENRI WIEDENHOFF</a>
+    <a class="nav-name" href="#top">HENRI WIEDENHOFF <span class="nav-subtitle">portfolio for Create Medtech</span></a>
     <ul class="nav-links">
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
